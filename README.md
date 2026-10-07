@@ -198,106 +198,216 @@ For low stock, the **LED and Buzzer** are activated automatically.
 
 `LOW STOCK → LED ON → BUZZER ON`
 
-**LCD Example:**
+---
 
-```text
-Weight: 3.2 kg
-LOW STOCK!
-🟢 NORMAL STOCK OUTPUT
-Weight: 5.0 kg
-Status: NORMAL STOCK
-LED: OFF
-Buzzer: OFF
-🔵 HIGH STOCK OUTPUT
-Weight: 23.8 kg
-Status: HIGH STOCK
-LED: OFF
-Buzzer: OFF
-📁 PROJECT STRUCTURE
-StockSense/
-│
-├── README.md
-├── sketch.ino
-├── diagram.json
-├── libraries.txt
-│
-├── diagrams/
-│   ├── block-diagram.png
-│   └── circuit-diagram.png
-│
-└── Demo/
-    ├── low-stock.png
-    ├── normal-stock.png
-    └── high-stock.png
-🚀 FUTURE ENHANCEMENTS
-The current StockSense prototype can be further developed into a complete IoT-based Inventory Management System.
-☁️ Cloud-Based Inventory Monitoring
-📱 Mobile Application
-🌐 Web Dashboard
-🔔 Real-Time Notifications
-📦 Multiple Product Monitoring
-📊 Inventory History & Analytics
-🗄️ Database Integration
-🤖 Automated Reordering
-📡 Wi-Fi Remote Monitoring
-🏭 Industrial Inventory Management
-📈 PROJECT STATUS
-Module
-Status
-ESP32 Integration
-✅ Completed
-Load Cell Integration
-✅ Completed
-HX711 Integration
-✅ Completed
-LCD Display
-✅ Completed
-Ultrasonic Sensor
-✅ Completed
-LED Alert
-✅ Completed
-Buzzer Alert
-✅ Completed
-Stock Classification
-✅ Completed
-Wokwi Simulation
-✅ Completed
-Physical Hardware Prototype
-🔄 Future Work
-IoT Dashboard
-🔄 Future Enhancement
-🛠️ TECHNOLOGIES USED
-ESP32 • Arduino C/C++ • Wokwi • HX711 • Load Cell • HC-SR04 • I2C • Embedded Systems
-🌟 PROJECT HIGHLIGHTS
-Measure → Monitor → Detect → Alert
+## 🔴 LOW STOCK
+
+**Condition:** Weight < 5 kg
+
+| Parameter | Output |
+|---|---|
+| Weight | **3.2 kg** |
+| Status | 🔴 **LOW STOCK** |
+| LED | 🟢 **ON** |
+| Buzzer | 🔊 **ON** |
+
+**System Response:**  
+**LOW STOCK → LED ON → BUZZER ON**
+
+---
+
+## 🟢 NORMAL STOCK
+
+**Condition:** 5.0 – 5.1 kg
+
+| Parameter | Output |
+|---|---|
+| Weight | **5.0 kg** |
+| Status | 🟢 **NORMAL STOCK** |
+| LED | ⚪ **OFF** |
+| Buzzer | ⚪ **OFF** |
+
+**System Response:**  
+**NORMAL STOCK → LED OFF → BUZZER OFF**
+
+---
+
+## 🔵 HIGH STOCK
+
+**Condition:** Weight > 5.1 kg
+
+| Parameter | Output |
+|---|---|
+| Weight | **23.8 kg** |
+| Status | 🔵 **HIGH STOCK** |
+| LED | ⚪ **OFF** |
+| Buzzer | ⚪ **OFF** |
+
+**System Response:**  
+**HIGH STOCK → LED OFF → BUZZER OFF**
+
+---
+
+## 🧠 ENGINEERING CONCEPTS
+
+This project demonstrates practical knowledge in:
+
+- Embedded Systems
+- ESP32 Microcontroller Programming
+- Sensor Interfacing
+- Weight Measurement
+- I2C Communication
+- GPIO Control
+- Threshold-Based Decision Making
+- Real-Time Monitoring
+- Embedded C/C++
+- Simulation-Based Prototyping
+- Inventory Monitoring Systems
+
+---
+
+## 🧪 WOKWI SIMULATION
+
+StockSense is developed and tested as a **simulation-based embedded system using Wokwi**.
+
+### Simulated Components
+
+- ESP32 DevKit
+- 50 kg Load Cell
+- HX711 Module
+- HC-SR04 Ultrasonic Sensor
+- 16×2 I2C LCD
+- LED
+- Buzzer
+- 220Ω Resistor
+
+Different weight values can be tested using the Wokwi load-cell simulation to verify stock classification and alert conditions.
+
+---
+
+## 📸 SIMULATION OUTPUT
+
+| Stock Level | Weight | Status | LED | Buzzer |
+|---|---:|---|---|---|
+| 🔴 Low | 3.2 kg | LOW STOCK | ON | ON |
+| 🟢 Normal | 5.0 kg | NORMAL STOCK | OFF | OFF |
+| 🔵 High | 23.8 kg | HIGH STOCK | OFF | OFF |
+
+---
+
+## 📁 PROJECT STRUCTURE
+
+**StockSense**
+
+- 📄 `README.md`
+- 📄 `sketch.ino`
+- 📄 `diagram.json`
+- 📄 `libraries.txt`
+- 📁 `diagrams`
+  - 🖼️ `block-diagram.png`
+  - 🖼️ `circuit-diagram.png`
+- 📁 `Demo`
+  - 🖼️ `low-stock.png`
+  - 🖼️ `normal-stock.png`
+  - 🖼️ `high-stock.png`
+
+---
+
+## 🚀 FUTURE ENHANCEMENTS
+
+The current StockSense prototype can be further developed into a complete **IoT-based Inventory Management System**.
+
+- ☁️ Cloud-Based Inventory Monitoring
+- 📱 Mobile Application
+- 🌐 Web Dashboard
+- 🔔 Real-Time Notifications
+- 📦 Multiple Product Monitoring
+- 📊 Inventory History & Analytics
+- 🗄️ Database Integration
+- 🤖 Automated Reordering
+- 📡 Wi-Fi Remote Monitoring
+- 🏭 Industrial Inventory Management
+
+---
+
+## 📈 PROJECT STATUS
+
+| Module | Status |
+|---|---|
+| ESP32 Integration | ✅ Completed |
+| Load Cell Integration | ✅ Completed |
+| HX711 Integration | ✅ Completed |
+| LCD Display | ✅ Completed |
+| Ultrasonic Sensor | ✅ Completed |
+| LED Alert | ✅ Completed |
+| Buzzer Alert | ✅ Completed |
+| Stock Classification | ✅ Completed |
+| Wokwi Simulation | ✅ Completed |
+| Physical Hardware Prototype | 🔄 Future Work |
+| IoT Dashboard | 🔄 Future Enhancement |
+
+---
+
+## 🛠️ TECHNOLOGIES USED
+
+**ESP32** • **Arduino C/C++** • **Wokwi** • **HX711** • **Load Cell** • **HC-SR04** • **I2C** • **Embedded Systems**
+
+---
+
+## 🌟 PROJECT HIGHLIGHTS
+
+### Measure → Monitor → Detect → Alert
+
 StockSense combines:
-ESP32 + Load Cell + HX711 + HC-SR04 + LCD + LED + Buzzer
-to create a Smart Inventory Monitoring Prototype.
-📌 PROJECT INFORMATION
-Category
-Details
-Project Name
-StockSense
-Project Type
-**Embedded Systems Project Application
-  Smart Inventory Monitoring
-  Controller
-  ESP32Platform
-  Wokwi
-Language
-  Arduino C/C++
- Prototype
-Simulation-BasedStatus**
-✅ Simulation Completed
-👩‍💻 DEVELOPER
-Divya M
-Electronics & Communication Engineering Student
-Technical Interests
-Embedded Systems • IoT • Sensor Interfacing • Image Processing • MATLAB • PCB Design
-Career Focus
-Core Electronics • Embedded Systems • IoT • Engineering Projects
-“Turning ideas into practical engineering solutions.”
-⭐ SUPPORT THE PROJECT
-If you find StockSense interesting, consider giving this repository a ⭐ Star.
-📦 StockSense
-Smart Inventory Monitoring for a Smarter Tomorrow
+
+**ESP32 + Load Cell + HX711 + HC-SR04 + LCD + LED + Buzzer**
+
+to create a **Smart Inventory Monitoring Prototype**.
+
+---
+
+## 📌 PROJECT INFORMATION
+
+| Category | Details |
+|---|---|
+| Project Name | StockSense |
+| Project Type | Embedded Systems Project |
+| Application | Smart Inventory Monitoring |
+| Controller | ESP32 |
+| Platform | Wokwi |
+| Language | Arduino C/C++ |
+| Prototype | Simulation-Based |
+| Status | ✅ Simulation Completed |
+
+---
+
+## 👩‍💻 DEVELOPER
+
+### Divya M
+
+**Electronics & Communication Engineering Student**
+
+### Technical Interests
+
+`Embedded Systems` • `IoT` • `Sensor Interfacing` • `Image Processing` • `MATLAB` • `PCB Design`
+
+### Career Focus
+
+**Core Electronics • Embedded Systems • IoT • Engineering Projects**
+
+> **“Turning ideas into practical engineering solutions.”**
+
+---
+
+## ⭐ SUPPORT THE PROJECT
+
+If you find **StockSense** interesting, consider giving this repository a ⭐ **Star**.
+
+---
+
+# 📦 StockSense
+
+### **Smart Inventory Monitoring for a Smarter Tomorrow**
+
+
+🏭 Industrial Inventory Management
