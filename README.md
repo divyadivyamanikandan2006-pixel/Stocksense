@@ -97,8 +97,7 @@ StockSense provides an **automated sensor-based monitoring system** that continu
 ---
 
 ## 🔲 **SYSTEM BLOCK DIAGRAM**
-
-![StockSense Block Diagram](diagrams/block-diagram.png)
+![StockSense Block Diagram](Block%20diagram.png)
 
 ### **SYSTEM FLOW**
 
@@ -114,7 +113,7 @@ The **ESP32 acts as the central controller**, processing sensor information and 
 
 ## 🔌 **CIRCUIT DIAGRAM**
 
-![StockSense Circuit Diagram](diagrams/circuit-diagram.png)
+![StockSense Circuit Diagram](circuit-diagram.png)
 
 ### **PIN CONFIGURATION**
 
